@@ -8,15 +8,15 @@ def surprise():
     return 'SURPRISE!'
 
 # TODO 1) Change what is assigned into the func_1 variable so test_1 will pass
-func_1 = None
+func_1 = surprise
 
 # TODO 2) Change the return statement below so that test_2 will pass
 def pizza_surprise():
-    return None
+    return "SURPRISE, here's a pizza!"
 
 # TODO 3) Implement the birthday_surprise function so that test_3 will pass
 def birthday_surprise(years_old):
-    return None
+    return 'SURPRISE, Happy' + years_old 'birthday!!!'
 
 # TODO 4) Implement the surprise_guests function so that test_3 will pass
 #  *HINT* You will have to add input parameters to the function

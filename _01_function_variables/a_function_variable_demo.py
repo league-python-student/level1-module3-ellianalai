@@ -37,7 +37,7 @@ class FunctionVariableExample(tk.Tk):
         # immediately BEFORE pressing the button when the object is created.
         # If the method name is used without the (), the method doesn't get
         # called until the button is pressed.
-        self.button.bind('<ButtonPress>', self.on_button_press(None))
+        self.button.bind('<ButtonPress>', self.on_button_press (None))
         #self.button.bind('<ButtonPress>', self.on_button_press)
 
     def on_button_press(self, event):
