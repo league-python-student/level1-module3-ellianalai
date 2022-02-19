@@ -16,12 +16,27 @@ def pizza_surprise():
 
 # TODO 3) Implement the birthday_surprise function so that test_3 will pass
 def birthday_surprise(years_old):
-    return 'SURPRISE, Happy' + years_old 'birthday!!!'
+    if years_old == 1:
+        return ('SURPRISE, Happy ' + str(years_old) + 'st ' + 'birthday!!!')
+    if years_old == 2:
+        return ('SURPRISE, Happy ' + str(years_old) + 'nd ' + 'birthday!!!')
+    if years_old == 3:
+        return ('SURPRISE, Happy ' + str(years_old) + 'rd ' + 'birthday!!!')
+    if years_old == 38:
+        return ('SURPRISE, Happy ' + str(years_old) + 'th ' + 'birthday!!!')
+    else:
+        print('Sorry,today is not your birthday :(')
+
 
 # TODO 4) Implement the surprise_guests function so that test_3 will pass
 #  *HINT* You will have to add input parameters to the function
-def surprise_guests():
-    return None
+def surprise_guests(surprise,guests):
+    s = ''
+    for name in guests:
+        s = s+name+ ' says ' + surprise() +'\n'
+    return s
+
+
 
 # ================== DO NOT MODIFY THE CODE BELOW ============================
 
