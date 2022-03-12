@@ -14,7 +14,7 @@ class Whack(tk.Tk):
         button_width, button_height = self.setup_buttons(num_buttons, columns_per_row)
 
         # TODO: Create a member variable for the list of buttons
-
+        self.b = []
         # TODO: Create a member variable for the random mole button and
         #  initialize it to None
 
@@ -22,12 +22,20 @@ class Whack(tk.Tk):
         #  Use the 'columns_per_row', 'button_width', 'button_height' variables
         #  when calling button.place() to put each button in the correct
         #  position
+
+
         for i in range(num_buttons):
             row_num = int(i / columns_per_row)
             col_num = int(i % columns_per_row)
             row_y = row_num * button_height
             col_x = col_num * button_width
+            self.button = tk.Button(self, text='', bg='blue')
+            self.button.place(x=col_x, y= row_y, width=button_width, height=button_height)
+            self.button.bind('<ButtonPress>', self.on_button_press)
+            self.b.append(self.button)
 
+        self.mole = random.choice(self.b)
+        self.mole.configure(text='Mole!')
             # TODO: Call the button's bind() method to call the on_button_press()
             #  method when a mouse button is pressed
             #  example: self.joke_button.bind('<ButtonPress>', self.on_button_press)
@@ -44,7 +52,7 @@ class Whack(tk.Tk):
     def on_button_press(self, event):
         button_pressed = event.widget
         print('button ' + repr(button_pressed) + ' clicked!')
-
+        if
         # TODO: return if button pressed is not the mole button!
 
         # TODO: Clear text for current mole button using
