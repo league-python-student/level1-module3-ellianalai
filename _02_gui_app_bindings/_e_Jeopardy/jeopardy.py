@@ -14,9 +14,9 @@ class Jeopardy(tk.Tk):
         button_width, button_height, num_buttons = self.setup_buttons(categories)
 
         # TODO: Create a member variable for the list of categories
-
+        self.category = categories
         # TODO: Create a member variable for the score/money
-
+        self.score= 0
         for i in range(num_buttons):
             row_num = int(i / len(categories))
             col_num = int(i % len(categories))
@@ -27,6 +27,9 @@ class Jeopardy(tk.Tk):
             # Create the category header and buttons where
             # row 0 is the category title
             if row_num == 0:
+                category.name() #I still don't get what this really means
+                self.label = tk.Label(self, )
+                self.label.place(x = col_x, y = row_y, width = button_width, height = button_height)
                 pass
                 # TODO: To get the category name, use the categories member variable and column num
 
@@ -37,24 +40,26 @@ class Jeopardy(tk.Tk):
                 value = category.questions[row_num - 1].value
 
                 # TODO: Create a tk.Button with the questions' value on the button
-
+                self.button=tk.Button(self,) #do I add anything else?
+                self.button.place(x=col_x, y=row_y, width=button_width, height=button_height)
                 # TODO: Place the Button using the 'col_x', 'row_y', 'button_width',
                 #  and 'button_height' variables
 
                 # TODO: Call the button's bind() method so the
                 #  on_button_press() method is called when a mouse button is pressed
-                #  example: self.joke_button.bind('<ButtonPress>', self.on_button_press)
+                self.button.bind('<ButtonPress>', self.on_button_press)
 
                 # TODO: Add the button to the category's list of buttons
-
+                self.category.append(self.button)
 
     def on_button_press(self, event):
         button_pressed = event.widget
         print('button ' + repr(button_pressed) + ' clicked!')
 
         # TODO: Call the ask_question() method with button_pressed as an input
-
+        ask_question(button_pressed) #what am I supposed to do??
     def ask_question(self, button_pressed):
+
         for category in self.categories:
             for i, button in enumerate(category.buttons):
                 if button == button_pressed:
