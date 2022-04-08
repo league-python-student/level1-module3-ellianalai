@@ -74,6 +74,7 @@ class Jeopardy(tk.Tk):
                         #  increase the score member variable by the value. Otherwise, subtract
                         #  value from the score
                         a = simpledialog.askstring(title = '', prompt = question)
+
                         if a == answer:
                             self.score = self.score + value
                             messagebox.showinfo(title = '', message= 'You now have the score of ' + str(self.score))
@@ -129,25 +130,28 @@ if __name__ == '__main__':
     # TODO: Use the Category class above to create at least 3 question categories
     #  for your _e_Jeopardy game
     City_and_States = Category('City & States')
-    City_and_States.add_question('What State do the call the Aloha State?', 'What is Hawaii?', 1)
-    City_and_States.add_question('This city is nicknamed the City of Angels.', 'What is Los Angeles?', 2)
-    City_and_States.add_question('This city is nicknamed the Windy City.', 'What is Chicago?', 3)
+    City_and_States.add_question('What State do the call the Aloha State?', 'What is Hawaii?', 100)
+    City_and_States.add_question('This city is nicknamed the City of Angels.', 'What is Los Angeles?', 200)
+    City_and_States.add_question('This city is nicknamed the Windy City.', 'What is Chicago?', 300)
     shows = Category('Shows & Movies')
-    shows.add_question('This famous monster was created by a doctor', 'Who is Frankenstein?',1 )
-    shows.add_question('In the Lord Of Rings, this is Bilbos last name', 'What is Baggins?', 2)
-    shows.add_question('This is Supermans weakness', 'What is Kyrptonite?', 3)
+    shows.add_question('This famous monster was created by a doctor', 'Who is Frankenstein?',100 )
+    shows.add_question('In the Lord Of Rings, this is Bilbos last name', 'What is Baggins?', 200)
+    shows.add_question('This is Supermans weakness', 'What is Kyrptonite?', 300)
     science = Category('Science')
-    science.add_question('This is the worlds largest bird', 'What is the ostrich?', 1)
-    science.add_question('This pigment gives leaves their green color', 'What is chlorophyll?', 2)
-    science.add_question('These are the three primary colors', 'What is red, yellow, and blue?', 1)
-    english = Category('English')
-    english.add_question('What defines a dependent clause', 'Starts with a subordinator', 5)
+    science.add_question('This is the worlds largest bird', 'What is the ostrich?', 100)
+    science.add_question('These are the three primary colors', 'What is red, yellow, and blue?', 200)
+    science.add_question('This pigment gives leaves their green color', 'What is chlorophyll?', 300)
+
+    history = Category('History')
+    history.add_question('This is the largest ocean in the world', 'What is the Pacific Ocean?', 100)
+    history.add_question('This is the northern most state in the US', 'What is Alaska?', 200)
+    history.add_question('In this year, the Titanic sunk', 'What is 1912?', 300)
     # TODO: For each Category, use the add_question method to add a question, answer, and
     #  a value for each question
     j_categories.append(City_and_States)
     j_categories.append(shows)
     j_categories.append(science)
-    j_categories.append(english)
+    j_categories.append(history)
     game = Jeopardy(j_categories)
-    game.title('_e_Jeopardy')
+    game.title('Jeopardy!!')
     game.mainloop()
